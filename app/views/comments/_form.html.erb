@@ -1,0 +1,24 @@
+  <%# creates a form to build a commenter and comment %>
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%# shows the commenter label%>
+    <%= form.label :commenter %><br>
+    <%# shows the commenter text box%>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%# shows the body label%>
+    <%= form.label :body %><br>
+    <%# shows the body big boy text box%>
+    <%= form.text_area :body %>
+  </p>
+    <div>
+  <%# creates a select box for statuses %>
+  <%= form.label :status %><br>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  </div>
+  <p>
+    <%# shows the SUBMIT button %>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,21 @@
+<p>
+  <%# shows the commenter: title%>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <%# shows the comment: title%>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+  <%# href link 'Destroy Comment', [argument which is the articles' comment], method by deletion %>
+  <%# clicking it will fire off DELETE to /articles/:article_id/comments/:id %>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+              method: :delete,
+              data: {confirm: "Are you sure dawg?" }
+  %>
+
+</p>
